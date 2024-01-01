@@ -1,11 +1,12 @@
-from utils.io import read_glb
+from utils.io import read_glb_meshes
+import torch
 
 
 class TestReadGlb:
 
     def test_read_glb(self):
-        POINTFLOW_SAMPLE = "/rawdata3/ShapeNetCore.v2.PC15k/02747177/train/10839d0dc35c94fcf4fb4dee5181bee.npy"
         OBJAVERSE_SAMPLE = "/rawdata3/objaverse/hf-objaverse-v1/glbs/000-000/0000ecca9a234cae994be239f6fec552.glb"
-
-        readed = read_glb(OBJAVERSE_SAMPLE)
-        print(readed)
+        vertices = read_glb_meshes(OBJAVERSE_SAMPLE)
+        for name, vertex in sorted(vertices.items()):
+            print(name, vertex.shape)
+        print(len(vertices))
