@@ -1,5 +1,5 @@
 from utils.io import read_glb_meshes
-import torch
+import open3d as o3d
 
 
 class TestReadGlb:
@@ -9,4 +9,9 @@ class TestReadGlb:
         vertices = read_glb_meshes(OBJAVERSE_SAMPLE)
         for name, vertex in sorted(vertices.items()):
             print(name, vertex.shape)
-        print(len(vertices))
+
+        # visualization
+        name, val = vertices.popitem()
+        pcd = o3d.geometry.PointCloud()
+        pcd.points = o3d.utility.Vector3dVector(val.T)
+        o3d.io.write_point_cloud("./test/test.ply", pcd)

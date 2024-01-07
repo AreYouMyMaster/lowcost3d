@@ -1,2 +1,4 @@
+jupyterlab
+open3d
 pygltflib
 pytest
