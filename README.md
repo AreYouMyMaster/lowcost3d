@@ -2,6 +2,14 @@
 Generation of 3d model has been the bottleneck of modern 3A game production. 
 This project is a collection of experiments on applying various techniques, heavily focus on deep leanring, to achieve fast, customizable 3d model/scene generation.
 
+## Set-up and Unit test
+
+Simply build the Docker image with: `docker build -t lowcost3d .`
+If you have access on our private server `city7`, it's already built there.
+
+Assuming the Objaverse data is in the `/rawdata3` directory, execute the command at project root to run all unit tests:
+`docker run -it -v \`pwd\`:/workspace -v /rawdata3:/rawdata3 lowcost3d pytest`
+
 ## Technical Issue
 
 ### Headless Rendering
