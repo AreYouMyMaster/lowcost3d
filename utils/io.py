@@ -33,7 +33,7 @@ def retrieve_vertices_from_buffer(obj: Gltf, mesh_id: int) -> np.ndarray:
     return vertices
 
 
-def get_point_clouds(obj: Gltf, node_id: int, transform: np.ndarray = np.ones((4, 4), dtype=float)):
+def get_point_clouds(obj: Gltf, node_id: int, transform: np.ndarray = np.identity(4, dtype=float)):
     """Recursively apply translation to the leaf-most nodes"""
     collections = {}
     node = obj.nodes[node_id]
