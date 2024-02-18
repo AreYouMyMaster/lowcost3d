@@ -1,0 +1,8 @@
+torch
+torchvision
+torchaudio
+jupyterlab
+open3d
+Pyarrow
+pygltflib
+pytest

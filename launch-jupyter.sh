@@ -1,0 +1,1 @@
+docker run -it -p 8888:8888 --rm --gpus 'all,"capabilities=compute,utility,graphics"' -v /home/mrchou/code/lowcost3d:/workspace -v /rawdata3:/rawdata3 lowcost3d jupyter-lab --no-browser --allow-root --ip=0.0.0.0
